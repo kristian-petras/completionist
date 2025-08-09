@@ -16,6 +16,33 @@ rojo serve
 
 For more help, check out [the Rojo documentation](https://rojo.space/docs).
 
+## Package Management
+
+This project uses [Wally](https://wally.run/) for package management.
+
+**Install packages:**
+```bash
+wally install
+# or
+npm run install-packages
+```
+
+**Update packages:**
+```bash
+wally update
+# or  
+npm run update-packages
+```
+
+**Adding dependencies:**
+Edit `wally.toml` and add to the `[dependencies]` section:
+```toml
+[dependencies]
+Signal = "sleitnick/signal@1.5.0"
+```
+
+Packages are installed to the `Packages/` folder and automatically available in ReplicatedStorage.
+
 ## Development Tools
 
 This project uses several development tools to ensure code quality and consistency:

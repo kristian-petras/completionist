@@ -34,6 +34,9 @@ jobs:
     - name: Install Rojo
       run: aftman install
       
+    - name: Install Wally packages
+      run: wally install
+      
     - name: Build place file
       run: rojo build default.project.json -o completionist.rbxlx
       

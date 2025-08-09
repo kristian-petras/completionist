@@ -11,7 +11,9 @@
     "lint:fix": "selene src/ --display-style=quiet",
     "check": "npm run format:check && npm run lint && npm run build",
     "fix": "npm run format && npm run lint:fix",
-    "dev": "concurrently \"npm run serve\" \"npm run lint -- --watch\""
+    "dev": "concurrently \"npm run serve\" \"npm run lint -- --watch\"",
+    "install-packages": "wally install",
+    "update-packages": "wally update"
   },
   "devDependencies": {
     "concurrently": "^7.6.0"
