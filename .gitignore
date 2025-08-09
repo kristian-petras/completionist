@@ -1,12 +1,16 @@
 # Project place file
 /completionist.rbxlx
 
+# Test place file
+/test.rbxlx
+
 # Roblox Studio lock files
 /*.rbxlx.lock
 /*.rbxl.lock
 
 # Wally packages
 /Packages
+/DevPackages
 
 # Documentation build output
 /docs
