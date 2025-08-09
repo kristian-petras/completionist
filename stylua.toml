@@ -1,0 +1,21 @@
+# StyLua Configuration for Roblox/Luau
+# Documentation: https://github.com/JohnnyMorganz/StyLua
+
+# Basic formatting options
+column_width = 120
+line_endings = "Unix"
+indent_type = "Spaces"
+indent_width = 4
+quote_style = "AutoPreferDouble"
+
+# Function and table formatting
+call_parentheses = "Always"
+collapse_simple_statement = "Never"
+
+# Table formatting
+table_separator = "Smart"
+trailing_comma = "Smart"
+
+# Roblox/Luau specific settings
+[sort_requires]
+enabled = false

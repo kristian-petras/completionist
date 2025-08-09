@@ -18,7 +18,28 @@ For more help, check out [the Rojo documentation](https://rojo.space/docs).
 
 ## Development Tools
 
-This project uses several development tools to ensure code quality:
+This project uses several development tools to ensure code quality and consistency:
+
+### StyLua - Code Formatting
+[StyLua](https://github.com/JohnnyMorganz/StyLua) automatically formats Lua/Luau code for consistent style.
+
+**Usage:**
+```bash
+# Format all code
+npm run format
+
+# Check formatting without changing files
+npm run format:check
+
+# Format and fix all issues
+npm run fix
+```
+
+**Configuration:**
+- Configuration file: `stylua.toml`
+- 4-space indentation, 120 character line width
+- Auto-formats on save in VS Code
+- Enforced in pre-commit hooks and CI
 
 ### Selene - Static Analysis
 [Selene](https://kampfkarren.github.io/selene/) is used for static analysis and linting of Lua/Luau code.
@@ -30,6 +51,9 @@ npm run lint
 
 # Run linting with minimal output
 npm run lint:fix
+
+# Run all quality checks
+npm run check
 ```
 
 **Configuration:**
@@ -44,12 +68,18 @@ npm run lint:fix
 
 ### VS Code Setup
 Install the recommended extensions:
+- `JohnnyMorganz.stylua` - StyLua formatting
 - `Kampfkarren.selene-vscode` - Selene integration
 - `evaera.vscode-rojo` - Rojo integration  
 - `JohnnyMorganz.luau-lsp` - Luau language server
 
+The workspace is configured for:
+- Format on save
+- Auto-fix on save
+- Real-time linting feedback
+
 ### Pre-commit Hooks
-Pre-commit hooks are configured to run Selene automatically before commits:
+Pre-commit hooks automatically run formatting and linting before commits:
 
 ```bash
 # Install pre-commit (if not already installed)
@@ -59,10 +89,24 @@ pip install pre-commit
 pre-commit install
 ```
 
+**Hooks run in order:**
+1. StyLua formatting check
+2. Selene linting
+3. General file checks (trailing whitespace, etc.)
+
 ### Continuous Integration
 GitHub Actions automatically runs:
+- StyLua formatting verification
 - Selene linting
 - Rojo build verification
 - Code quality checks
 
 All checks must pass before merging pull requests.
+
+## Code Style Standards
+
+- **Indentation**: 4 spaces
+- **Line Width**: 120 characters
+- **Quotes**: Double quotes preferred
+- **Function Calls**: Always use parentheses
+- **Trailing Commas**: Smart (added when beneficial for diffs)

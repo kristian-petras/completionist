@@ -7,17 +7,23 @@ on:
     branches: [ main ]
 
 jobs:
-  lint:
+  lint-and-format:
     runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v4
     
-    - name: Install Selene
+    - name: Install Rust toolchain
+      uses: dtolnay/rust-toolchain@stable
+    
+    - name: Install StyLua and Selene
       run: |
-        cargo install selene
+        cargo install stylua selene
         
-    - name: Run Selene
+    - name: Check formatting
+      run: stylua --check src/
+      
+    - name: Run linting
       run: selene src/
       
     - name: Build with Rojo

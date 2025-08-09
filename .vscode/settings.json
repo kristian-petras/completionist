@@ -19,13 +19,21 @@
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.fixAll": true
+    },
+    "stylua.configPath": "./stylua.toml",
+    "[lua]": {
+      "editor.defaultFormatter": "JohnnyMorganz.stylua"
+    },
+    "[luau]": {
+      "editor.defaultFormatter": "JohnnyMorganz.stylua"
     }
   },
   "extensions": {
     "recommendations": [
       "Kampfkarren.selene-vscode",
       "evaera.vscode-rojo",
-      "JohnnyMorganz.luau-lsp"
+      "JohnnyMorganz.luau-lsp",
+      "JohnnyMorganz.stylua"
     ]
   }
 }
