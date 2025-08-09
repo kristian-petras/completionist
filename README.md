@@ -43,6 +43,30 @@ Signal = "sleitnick/signal@1.5.0"
 
 Packages are installed to the `Packages/` folder and automatically available in ReplicatedStorage.
 
+## Documentation
+
+This project uses [Moonwave](https://moonwave.luau-lang.org/) for documentation generation.
+
+**Build documentation:**
+```bash
+npm run docs:build
+# or
+moonwave build
+```
+
+**Serve documentation locally:**
+```bash
+npm run docs:serve
+# or
+moonwave dev
+```
+
+**View documentation:**
+- Development: http://localhost:3000
+- Production: https://kristianpetras.github.io/completionist/
+
+Documentation is automatically built and deployed to GitHub Pages on every push to main.
+
 ## Development Tools
 
 This project uses several development tools to ensure code quality and consistency:

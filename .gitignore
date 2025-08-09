@@ -7,3 +7,7 @@
 
 # Wally packages
 /Packages
+
+# Documentation build output
+/docs
+/.docusaurus

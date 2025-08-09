@@ -40,8 +40,19 @@ jobs:
     - name: Build place file
       run: rojo build default.project.json -o completionist.rbxlx
       
+    - name: Build documentation
+      run: |
+        npm install -g moonwave
+        moonwave build
+      
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
         name: completionist-build
         path: completionist.rbxlx
+        
+    - name: Upload documentation artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: completionist-docs
+        path: docs/
