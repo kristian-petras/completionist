@@ -9,7 +9,7 @@ dependencies = []
 
 [[package]]
 name = "kristianpetras/completionist"
-version = "0.1.0"
+version = "1.0.0"
 dependencies = [["Comm", "sleitnick/comm@0.3.2"], ["Signal", "sleitnick/signal@1.5.0"], ["TestEZ", "roblox/testez@0.4.1"]]
 
 [[package]]

@@ -36,7 +36,7 @@ npm run install-packages
 **Update packages:**
 ```bash
 wally update
-# or  
+# or
 npm run update-packages
 ```
 
@@ -166,7 +166,7 @@ npm run check
 Install the recommended extensions:
 - `JohnnyMorganz.stylua` - StyLua formatting
 - `Kampfkarren.selene-vscode` - Selene integration
-- `evaera.vscode-rojo` - Rojo integration  
+- `evaera.vscode-rojo` - Rojo integration
 - `JohnnyMorganz.luau-lsp` - Luau language server
 
 The workspace is configured for:

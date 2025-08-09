@@ -12,10 +12,6 @@ quote_style = "AutoPreferDouble"
 call_parentheses = "Always"
 collapse_simple_statement = "Never"
 
-# Table formatting
-table_separator = "Smart"
-trailing_comma = "Smart"
-
 # Roblox/Luau specific settings
 [sort_requires]
 enabled = false

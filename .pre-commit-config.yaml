@@ -7,14 +7,14 @@ repos:
         language: system
         files: \.(lua|luau)$
         args: [--check, src/, tests/]
-        
+
       - id: selene
         name: Selene Lua Linter
         entry: selene
         language: system
         files: \.(lua|luau)$
         args: [--display-style=quiet, src/, tests/]
-        
+
       - id: test-build
         name: Build test environment
         entry: bash
@@ -22,7 +22,7 @@ repos:
         files: \.(lua|luau|json|toml)$
         args: [-c, "npm run install-packages && npm run test:build"]
         pass_filenames: false
-        
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:

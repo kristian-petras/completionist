@@ -24,7 +24,7 @@ Browse the [API Reference](/api) to see detailed documentation for all modules, 
 The project follows a standard Roblox architecture:
 
 - **Client**: Scripts that run on the player's device
-- **Server**: Scripts that run on the Roblox servers  
+- **Server**: Scripts that run on the Roblox servers
 - **Shared**: Code that can be used by both client and server
 
 ## Contributing

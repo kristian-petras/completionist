@@ -9,22 +9,22 @@ on:
 jobs:
   lint-and-format:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'
-    
+
     - name: Install npm dependencies
       run: npm ci
-    
+
     - name: Install Rust toolchain
       uses: dtolnay/rust-toolchain@stable
-    
+
     - name: Cache Rust and Cargo
       uses: actions/cache@v4
       with:
@@ -37,7 +37,7 @@ jobs:
         key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock', '**/aftman.toml') }}
         restore-keys: |
           ${{ runner.os }}-cargo-
-    
+
     - name: Cache Aftman tools
       uses: actions/cache@v4
       with:
@@ -47,15 +47,15 @@ jobs:
         key: ${{ runner.os }}-aftman-${{ hashFiles('**/aftman.toml') }}
         restore-keys: |
           ${{ runner.os }}-aftman-
-        
+
     - name: Setup Aftman
       uses: ok-nick/setup-aftman@v0.4.2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        
+
     - name: Install Aftman tools
       run: aftman install
-    
+
     - name: Install StyLua and Selene
       run: |
         if ! command -v stylua &> /dev/null; then
@@ -70,13 +70,13 @@ jobs:
         else
           echo "selene already available"
         fi
-        
+
     - name: Check formatting
       run: stylua --check src/
-      
+
     - name: Run linting
       run: selene src/
-      
+
     - name: Cache Wally packages
       uses: actions/cache@v4
       with:
@@ -86,16 +86,16 @@ jobs:
         key: ${{ runner.os }}-wally-${{ hashFiles('**/wally.toml', '**/wally.lock') }}
         restore-keys: |
           ${{ runner.os }}-wally-
-       
+
     - name: Install Wally packages
       run: wally install
-      
+
     - name: Build place file
       run: rojo build default.project.json -o completionist.rbxlx
-      
+
     - name: Build test file
       run: rojo build test.project.json -o test.rbxlx
-      
+
     - name: Validate test build
       run: |
         if [ ! -f test.rbxlx ]; then
@@ -103,22 +103,22 @@ jobs:
           exit 1
         fi
         echo "✅ Test build successful - ready for manual execution in Roblox Studio"
-      
+
     - name: Build documentation
       run: moonwave build || echo "Moonwave build failed, using existing docs if available"
-      
+
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
         name: completionist-build
         path: completionist.rbxlx
-        
+
     - name: Upload test artifact
       uses: actions/upload-artifact@v4
       with:
         name: completionist-tests
         path: test.rbxlx
-        
+
     - name: Upload documentation artifact
       uses: actions/upload-artifact@v4
       with:
