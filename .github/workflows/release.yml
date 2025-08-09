@@ -13,8 +13,23 @@ jobs:
     name: Create release PR or tag release
     steps:
       - uses: google-github-actions/release-please-action@v4
+        id: release
         with:
           release-type: simple
           package-name: completionist
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
+      
+      - name: Download build artifact
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/download-artifact@v4
+        with:
+          name: completionist
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Upload artifact to release
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload ${{ steps.release.outputs.tag_name }} completionist.rbxlx
