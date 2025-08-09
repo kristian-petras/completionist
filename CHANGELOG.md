@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/kristian-petras/completionist/compare/completionist-v1.2.0...completionist-v1.2.1) (2025-08-09)
+
+
+### Bug Fixes
+
+* add checkout step to release-please job for git context ([de2129c](https://github.com/kristian-petras/completionist/commit/de2129cd729aa6af8758130c683cf5f0964bad72))
+
 ## [1.2.0](https://github.com/kristian-petras/completionist/compare/completionist-v1.1.0...completionist-v1.2.0) (2025-08-09)
 
 
