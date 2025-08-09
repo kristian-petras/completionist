@@ -1,7 +1,7 @@
 # Completionist
 
-[![CI](https://github.com/kristianpetras/completionist/actions/workflows/ci.yml/badge.svg)](https://github.com/kristianpetras/completionist/actions/workflows/ci.yml)
-[![Documentation](https://github.com/kristianpetras/completionist/actions/workflows/docs.yml/badge.svg)](https://github.com/kristianpetras/completionist/actions/workflows/docs.yml)
+[![Release](https://github.com/kristianpetras/completionist/actions/workflows/release.yml/badge.svg)](https://github.com/kristianpetras/completionist/actions/workflows/release.yml)
+[![Documentation](https://github.com/kristianpetras/completionist/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/kristianpetras/completionist/actions/workflows/publish-docs.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Wally](https://img.shields.io/badge/Wally-1.0.0-blue.svg)](https://wally.run/package/kristianpetras/completionist)
 
