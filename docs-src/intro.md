@@ -13,7 +13,7 @@ Completionist is a Roblox game that demonstrates:
 
 ## Getting Started
 
-To get started with development, see the [README](https://github.com/kristianpetras/completionist/blob/main/README.md) in the main repository.
+To get started with development, see the [README](https://github.com/kristian-petras/completionist/blob/main/README.md) in the main repository.
 
 ## API Reference
 

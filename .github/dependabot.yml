@@ -9,7 +9,7 @@ updates:
       day: "monday"
     open-pull-requests-limit: 5
     reviewers:
-      - "kristianpetras"
+      - "kristian-petras"
     labels:
       - "dependencies"
       - "github-actions"

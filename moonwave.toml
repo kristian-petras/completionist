@@ -5,9 +5,9 @@ outDir = "docs"
 [docusaurus]
 title = "Completionist Documentation"
 tagline = "A Roblox game built with Rojo"
-url = "https://kristianpetras.github.io"
+url = "https://kristian-petras.github.io"
 baseUrl = "/completionist/"
-organizationName = "kristianpetras"
+organizationName = "kristian-petras"
 projectName = "completionist"
 
 [navbar]
@@ -19,7 +19,7 @@ to = "api"
 
 [[navbar.items]]
 label = "GitHub"
-href = "https://github.com/kristianpetras/completionist"
+href = "https://github.com/kristian-petras/completionist"
 position = "right"
 
 [footer]
@@ -38,7 +38,7 @@ title = "Community"
 
 [[footer.links.items]]
 label = "GitHub"
-href = "https://github.com/kristianpetras/completionist"
+href = "https://github.com/kristian-petras/completionist"
 
 [gitMetadata]
-editUrl = "https://github.com/kristianpetras/completionist/edit/main/"
+editUrl = "https://github.com/kristian-petras/completionist/edit/main/"

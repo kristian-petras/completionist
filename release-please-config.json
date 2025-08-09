@@ -1,13 +1,11 @@
 {
   "packages": {
     ".": {
-      "release-type": "simple",
+      "release-type": "node",
       "package-name": "completionist",
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": true,
-      "extra-files": [
-        "wally.toml"
-      ]
+      "extra-files": ["wally.toml"]
     }
   }
 }
