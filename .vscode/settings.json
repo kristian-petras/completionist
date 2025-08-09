@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "selene.config_file": "./selene.toml",
+    "selene.std": "roblox",
+    "files.associations": {
+      "*.luau": "lua"
+    },
+    "lua.diagnostics.globals": [
+      "game",
+      "script",
+      "workspace",
+      "plugin"
+    ],
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "Kampfkarren.selene-vscode",
+      "evaera.vscode-rojo",
+      "JohnnyMorganz.luau-lsp"
+    ]
+  }
+}

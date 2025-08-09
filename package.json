@@ -1,0 +1,19 @@
+{
+  "name": "completionist",
+  "version": "1.0.0",
+  "description": "A Roblox game built with Rojo",
+  "scripts": {
+    "build": "rojo build default.project.json -o completionist.rbxlx",
+    "serve": "rojo serve",
+    "lint": "selene src/",
+    "lint:fix": "selene src/ --display-style=quiet",
+    "check": "npm run lint && npm run build",
+    "dev": "concurrently \"npm run serve\" \"npm run lint -- --watch\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "keywords": ["roblox", "rojo", "luau"],
+  "author": "",
+  "license": "MIT"
+}
