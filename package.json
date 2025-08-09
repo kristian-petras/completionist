@@ -22,10 +22,10 @@
     "test:watch": "concurrently \"rojo serve test.project.json\" \"echo 'Connect to test server in Roblox Studio'\""
   },
   "devDependencies": {
-    "concurrently": "^7.6.0",
-    "gh-pages": "^6.0.0"
+    "concurrently": "7.6.0",
+    "gh-pages": "6.0.0"
   },
   "keywords": ["roblox", "rojo", "luau"],
-  "author": "",
+  "author": "Kristian Petras",
   "license": "MIT"
 }

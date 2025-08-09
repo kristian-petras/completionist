@@ -13,27 +13,53 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+    
+    - name: Install npm dependencies
+      run: npm ci
+    
+    - name: Setup Aftman
+      uses: ok-nick/setup-aftman@v0.4.2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Install Aftman tools
+      run: aftman install
+      
+    - name: Cache Rust tools
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/bin/
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+        key: ${{ runner.os }}-rust-tools-${{ hashFiles('**/Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-rust-tools-
+    
     - name: Install Rust toolchain
       uses: dtolnay/rust-toolchain@stable
     
     - name: Install StyLua and Selene
       run: |
-        cargo install stylua selene
+        if ! command -v stylua &> /dev/null; then
+          cargo install stylua
+        fi
+        if ! command -v selene &> /dev/null; then
+          cargo install selene
+        fi
         
     - name: Check formatting
       run: stylua --check src/
       
     - name: Run linting
       run: selene src/
-      
-    - name: Build with Rojo
-      uses: ok-nick/setup-aftman@v0.4.2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        
-    - name: Install Rojo
-      run: aftman install
-      
+       
     - name: Install Wally packages
       run: wally install
       
@@ -52,9 +78,7 @@ jobs:
         echo "✅ Test build successful - ready for manual execution in Roblox Studio"
       
     - name: Build documentation
-      run: |
-        npm install -g moonwave
-        moonwave build
+      run: moonwave build
       
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
