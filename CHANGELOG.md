@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.3.0](https://github.com/kristian-petras/completionist/compare/completionist-v1.2.1...completionist-v1.3.0) (2025-08-09)
+
+
+### Features
+
+* configure automated dependency management and versioning ([8f30b7d](https://github.com/kristian-petras/completionist/commit/8f30b7d68968ea40b426e120b537110b7f97d501))
+
+
+### Bug Fixes
+
+* apply pre-commit formatting fixes ([e6514fb](https://github.com/kristian-petras/completionist/commit/e6514fb789374f22cbe68353b644ce9e65b6a96c))
+* apply pre-commit formatting fixes to AGENTS.md ([e089e0c](https://github.com/kristian-petras/completionist/commit/e089e0cbaa213c58f1884503fc60d91675ae46c6))
+* update release-please config for proper wally.toml versioning ([fc0e30b](https://github.com/kristian-petras/completionist/commit/fc0e30b8e5331b1616cf7283f5996832363e7eb0))
+* update workflow badges to match current workflow names ([076de24](https://github.com/kristian-petras/completionist/commit/076de243f97f32928b6bbecad8768c4ea66ff2f3))
+
 ## [1.2.1](https://github.com/kristian-petras/completionist/compare/completionist-v1.2.0...completionist-v1.2.1) (2025-08-09)
 
 
