@@ -10,17 +10,11 @@
             "current": {
                 "name": "path",
                 "sources": {
-                    "@Packages": "Packages/",
-                    "@DevPackages": "DevPackages/",
-                    "@Lib": "lib/",
-                    "@Project": "src/",
-                    "@Client": "src/Client/",
-                    "@Controllers": "src/Client/Controllers/",
-                    "@Components": "src/Client/UI/Components/",
-                    "@Hooks": "src/Client/UI/Hooks/",
-                    "@Common": "src/Common/",
-                    "@Server": "src/Server/",
-                    "@Services": "src/Server/Services/"
+                    "Packages": "Packages/",
+                    "Project": "src/",
+                    "Client": "src/client/",
+                    "Server": "src/server/",
+                    "Shared": "src/shared/"
                 }
             },
             "target": {
