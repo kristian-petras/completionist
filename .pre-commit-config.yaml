@@ -15,12 +15,12 @@ repos:
         files: \.(lua|luau)$
         args: [--display-style=quiet, src/, tests/]
 
-      - id: test-build
-        name: Build test environment
+      - id: test-lune
+        name: Run tests with Lune
         entry: bash
         language: system
         files: \.(lua|luau|json|toml)$
-        args: [-c, "npm run install-packages && npm run test:build"]
+        args: [-c, "npm run install-packages && npm run test"]
         pass_filenames: false
 
   - repo: https://github.com/pre-commit/pre-commit-hooks

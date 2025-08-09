@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  lint-and-format:
+  test-lint-and-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -53,20 +53,6 @@ jobs:
 
     - name: Install Rokit tools
       run: rokit install
-    - name: Install StyLua and Selene
-      run: |
-        if ! command -v stylua &> /dev/null; then
-          echo "Installing stylua..."
-          cargo install stylua --locked
-        else
-          echo "stylua already available"
-        fi
-        if ! command -v selene &> /dev/null; then
-          echo "Installing selene..."
-          cargo install selene --locked
-        else
-          echo "selene already available"
-        fi
 
     - name: Check formatting
       run: stylua --check src/
@@ -90,16 +76,8 @@ jobs:
     - name: Build place file
       run: rojo build default.project.json -o completionist.rbxlx
 
-    - name: Build test file
-      run: rojo build test.project.json -o test.rbxlx
-
-    - name: Validate test build
-      run: |
-        if [ ! -f test.rbxlx ]; then
-          echo "❌ Test build failed - test.rbxlx not found"
-          exit 1
-        fi
-        echo "✅ Test build successful - ready for manual execution in Roblox Studio"
+    - name: Run tests with Lune
+      run: lune run tests/run-tests.luau
 
     - name: Build documentation
       run: moonwave build || echo "Moonwave build failed, using existing docs if available"
@@ -109,12 +87,6 @@ jobs:
       with:
         name: completionist-build
         path: completionist.rbxlx
-
-    - name: Upload test artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: completionist-tests
-        path: test.rbxlx
 
     - name: Upload documentation artifact
       uses: actions/upload-artifact@v4

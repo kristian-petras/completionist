@@ -1,6 +1,6 @@
 [config]
 # Standard library configuration for Roblox
-std = "roblox+testez"
+std = "roblox"
 
 # File inclusion patterns
 includes = ["src/**/*.lua", "src/**/*.luau", "tests/**/*.lua"]

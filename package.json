@@ -17,9 +17,7 @@
     "docs:build": "moonwave build",
     "docs:serve": "moonwave dev",
     "docs:deploy": "moonwave build && gh-pages -d docs",
-    "test:build": "rojo build test.project.json -o test.rbxlx",
-    "test": "npm run install-packages && npm run test:build",
-    "test:watch": "concurrently \"rojo serve test.project.json\" \"echo 'Connect to test server in Roblox Studio'\""
+    "test": "lune run tests/run-tests.luau"
   },
   "devDependencies": {
     "concurrently": "^9.2.0",
