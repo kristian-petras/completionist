@@ -117,11 +117,14 @@ Use these prefixes for automatic semantic versioning:
 - `BREAKING CHANGE:` - Major version bump
 
 ### Quality Checks
-Before committing, ensure:
-1. Code builds successfully: `rojo build`
-2. Tests pass: `lune run tests/run-tests.luau`
-3. Formatting is correct: `stylua --check src/ tests/`
-4. No lint errors: `selene src/ tests/`
+Before committing, ensure all quality checks pass:
+```bash
+# Run all quality checks (formatting, linting, tests, build)
+pre-commit run --all-files
+```
+
+### Push Policy
+**CRITICAL**: Never push changes without explicit user approval. Always ask for permission before running `git push` or any commands that modify the remote repository.
 
 ### Release Process
 1. Make changes with conventional commit messages
