@@ -17,8 +17,6 @@ jobs:
         with:
           release-type: simple
           package-name: completionist
-          bump-minor-pre-major: true
-          bump-patch-for-minor-pre-major: true
       
       - name: Download build artifact
         if: ${{ steps.release.outputs.release_created }}
