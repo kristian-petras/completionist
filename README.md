@@ -1,9 +1,9 @@
 # Completionist
-
-[![Release](https://github.com/kristianpetras/completionist/actions/workflows/release.yml/badge.svg)](https://github.com/kristianpetras/completionist/actions/workflows/release.yml)
-[![Documentation](https://github.com/kristianpetras/completionist/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/kristianpetras/completionist/actions/workflows/publish-docs.yml)
+[![Release](https://github.com/kristian-petras/completionist/actions/workflows/release.yml/badge.svg)](https://github.com/kristian-petras/completionist/actions/workflows/release.yml)
+[![Documentation](https://github.com/kristian-petras/completionist/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/kristian-petras/completionist/actions/workflows/publish-docs.yml)
+[![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Wally](https://img.shields.io/badge/Wally-1.0.0-blue.svg)](https://wally.run/package/kristianpetras/completionist)
+[![Wally](https://img.shields.io/badge/Wally-1.0.0-blue.svg)](https://wally.run/package/kristian-petras/completionist)
 
 A modern Roblox game built with industry-standard development tools and best practices.
 
@@ -16,7 +16,7 @@ A modern Roblox game built with industry-standard development tools and best pra
 ### Development Setup
 ```bash
 # Clone the repository
-git clone https://github.com/kristianpetras/completionist.git
+git clone https://github.com/kristian-petras/completionist.git
 cd completionist
 
 # Install development tools
