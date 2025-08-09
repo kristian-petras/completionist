@@ -14,4 +14,4 @@ collapse_simple_statement = "Never"
 
 # Roblox/Luau specific settings
 [sort_requires]
-enabled = false
+enabled = true

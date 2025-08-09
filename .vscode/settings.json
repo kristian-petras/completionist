@@ -1,39 +1,24 @@
 {
-  "folders": [
-    {
-      "path": "."
-    }
-  ],
-  "settings": {
-    "selene.config_file": "./selene.toml",
-    "selene.std": "roblox",
-    "files.associations": {
-      "*.luau": "lua"
-    },
-    "lua.diagnostics.globals": [
-      "game",
-      "script",
-      "workspace",
-      "plugin"
-    ],
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll": true
-    },
-    "stylua.configPath": "./stylua.toml",
-    "[lua]": {
-      "editor.defaultFormatter": "JohnnyMorganz.stylua"
-    },
-    "[luau]": {
-      "editor.defaultFormatter": "JohnnyMorganz.stylua"
-    }
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
   },
-  "extensions": {
-    "recommendations": [
-      "Kampfkarren.selene-vscode",
-      "evaera.vscode-rojo",
-      "JohnnyMorganz.luau-lsp",
-      "JohnnyMorganz.stylua"
-    ]
+  "luau-lsp.sourcemap.autogenerate": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "luau-lsp.completion.imports.enabled": true,
+  "luau-lsp.completion.imports.suggestServices": true,
+  "luau-lsp.completion.imports.suggestRequires": false,
+  "files.associations": {
+    "*.luau": "lua"
+  },
+  "files.exclude": {
+    "globalTypes.d.luau": true
+  },
+  "search.exclude": {
+    "Packages/": true,
+    "DevPackages/": true,
+    "dist/": true
   }
 }

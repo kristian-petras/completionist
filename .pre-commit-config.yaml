@@ -1,26 +1,39 @@
+# Pre-commit hooks for Roblox project template
+# Install with: pip install pre-commit && pre-commit install
+# Run manually with: pre-commit run --all-files
+
 repos:
   - repo: local
     hooks:
       - id: stylua
-        name: StyLua Formatter
+        name: Format with Stylua
         entry: stylua
         language: system
         files: \.(lua|luau)$
         args: [--check, src/, tests/]
+        description: Check Luau code formatting
 
       - id: selene
-        name: Selene Lua Linter
+        name: Lint with Selene
         entry: selene
         language: system
         files: \.(lua|luau)$
         args: [--display-style=quiet, src/, tests/]
+        description: Lint Luau code for quality issues
+
+      - id: wally-install
+        name: Install Wally packages
+        entry: wally
+        language: system
+        files: wally\.(toml|lock)$
+        args: [install]
+        pass_filenames: false
 
       - id: test-lune
         name: Run tests with Lune
-        entry: bash
+        entry: lune
         language: system
-        files: \.(lua|luau|json|toml)$
-        args: [-c, "npm run install-packages && npm run test"]
+        args: [run, tests/run-tests.luau]
         pass_filenames: false
 
   - repo: https://github.com/pre-commit/pre-commit-hooks

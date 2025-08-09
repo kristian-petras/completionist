@@ -1,6 +1,6 @@
 -- Tests for Math module
-local TestRunner = require("shared/TestRunner")
 local Math = require("../src/shared/Math")
+local TestRunner = require("shared/TestRunner")
 
 local test = TestRunner.test
 

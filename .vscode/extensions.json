@@ -1,11 +1,11 @@
 {
-    "recommendations": [
-        "JohnnyMorganz.stylua",
-        "Kampfkarren.selene-vscode",
-        "evaera.vscode-rojo",
-        "JohnnyMorganz.luau-lsp",
-        "ms-vscode.vscode-json",
-        "redhat.vscode-yaml",
-        "EditorConfig.EditorConfig"
-    ]
+  "recommendations": [
+    "JohnnyMorganz.stylua",
+    "Kampfkarren.selene-vscode",
+    "evaera.vscode-rojo",
+    "JohnnyMorganz.luau-lsp",
+    "ms-vscode.vscode-json",
+    "redhat.vscode-yaml",
+    "EditorConfig.EditorConfig"
+  ]
 }
