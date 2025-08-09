@@ -47,3 +47,4 @@ node_modules/
 *.temp
 sourcemap.json
 globalTypes.d.luau
+sourcemap.test.json

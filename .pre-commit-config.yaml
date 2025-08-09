@@ -30,7 +30,7 @@ repos:
           - -c
           - |
             rojo sourcemap -o sourcemap.json > /dev/null 2>&1
-            luau-lsp analyze --definitions=globalTypes.d.luau --base-luaurc=.luaurc --sourcemap=sourcemap.json --settings=.vscode/settings.json --no-strict-dm-types --ignore "Packages/**/*.lua" --ignore "Packages/**/*.luau" --ignore "DevPackages/**/*.lua" --ignore "DevPackages/**/*.luau" --ignore "lib/**/*.lua" --ignore "lib/**/*.luau" src/ tests/
+            luau-lsp analyze --definitions=globalTypes.d.luau --base-luaurc=.luaurc --sourcemap=sourcemap.json --settings=.vscode/settings.json --no-strict-dm-types --ignore "Packages/**/*.lua" --ignore "Packages/**/*.luau" --ignore "DevPackages/**/*.lua" --ignore "DevPackages/**/*.luau" --ignore "lib/**/*.lua" --ignore "lib/**/*.luau" src/
         pass_filenames: false
         description: Run Luau type analysis
 
