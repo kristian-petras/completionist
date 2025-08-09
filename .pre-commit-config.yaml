@@ -21,6 +21,19 @@ repos:
         args: [--display-style=quiet, src/, tests/]
         description: Lint Luau code for quality issues
 
+      - id: luau-analyze
+        name: Type check with Luau LSP
+        entry: bash
+        language: system
+        files: \.(lua|luau)$
+        args:
+          - -c
+          - |
+            rojo sourcemap -o sourcemap.json > /dev/null 2>&1
+            luau-lsp analyze --sourcemap=sourcemap.json --no-strict-dm-types --ignore "Packages/**/*.lua" --ignore "Packages/**/*.luau" src/
+        pass_filenames: false
+        description: Run Luau type analysis
+
       - id: wally-install
         name: Install Wally packages
         entry: wally

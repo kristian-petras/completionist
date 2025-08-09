@@ -1,0 +1,9 @@
+{
+  "languageMode": "strict",
+  "globals": [
+    "game",
+    "workspace",
+    "script",
+    "shared"
+  ]
+}
