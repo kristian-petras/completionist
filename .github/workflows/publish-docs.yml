@@ -2,6 +2,11 @@ name: publish-docs
 on:
   push:
     branches: ["main"]
+    paths:
+      - 'src/**/*.luau'           # Source code (for API docs)
+      - 'docs-src/**'             # Manual documentation
+      - 'moonwave.toml'           # Documentation config
+      - '.github/workflows/publish-docs.yml'  # Workflow changes
 
 permissions:
   contents: read
