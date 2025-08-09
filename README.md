@@ -67,6 +67,45 @@ moonwave dev
 
 Documentation is automatically built and deployed to GitHub Pages on every push to main.
 
+## Testing
+
+This project uses [TestEZ](https://github.com/Roblox/testez) for unit testing and test-driven development.
+
+**Run tests:**
+```bash
+# Install dependencies and build test environment
+npm run test
+
+# Start test server for manual execution in Roblox Studio
+npm run test:watch
+```
+
+**Execute tests in Roblox Studio:**
+1. Run `npm run test:watch` to start the test server
+2. Open Roblox Studio and connect to the test server
+3. Tests will automatically execute when the place loads
+4. Check the output window for test results
+
+**Writing tests:**
+- Create test files in the `tests/` directory
+- Use `.spec.lua` extension for test files
+- Follow TestEZ BDD syntax with `describe`, `it`, and `expect`
+- See `tests/shared/Hello.spec.lua` for an example
+
+**Test structure:**
+```lua
+return function()
+    describe("Your Module", function()
+        it("should do something", function()
+            expect(someValue).to.equal(expectedValue)
+        end)
+    end)
+end
+```
+
+**CI Integration:**
+Tests are automatically built and validated in the CI/CD pipeline on every commit.
+
 ## Development Tools
 
 This project uses several development tools to ensure code quality and consistency:

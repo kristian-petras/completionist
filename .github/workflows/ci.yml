@@ -40,6 +40,17 @@ jobs:
     - name: Build place file
       run: rojo build default.project.json -o completionist.rbxlx
       
+    - name: Build test file
+      run: rojo build test.project.json -o test.rbxlx
+      
+    - name: Validate test build
+      run: |
+        if [ ! -f test.rbxlx ]; then
+          echo "❌ Test build failed - test.rbxlx not found"
+          exit 1
+        fi
+        echo "✅ Test build successful - ready for manual execution in Roblox Studio"
+      
     - name: Build documentation
       run: |
         npm install -g moonwave
@@ -50,6 +61,12 @@ jobs:
       with:
         name: completionist-build
         path: completionist.rbxlx
+        
+    - name: Upload test artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: completionist-tests
+        path: test.rbxlx
         
     - name: Upload documentation artifact
       uses: actions/upload-artifact@v4
