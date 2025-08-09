@@ -1,6 +1,8 @@
 [package]
 name = "kristian-petras/completionist"
+# x-release-please-start-version
 version = "1.2.1"
+# x-release-please-end
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
