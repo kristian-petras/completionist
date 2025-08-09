@@ -1,0 +1,20 @@
+name: release
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    name: Create release PR or tag release
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        with:
+          release-type: simple
+          package-name: completionist
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
