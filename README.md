@@ -5,204 +5,72 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Wally](https://img.shields.io/badge/Wally-1.0.0-blue.svg)](https://wally.run/package/kristianpetras/completionist)
 
-A Roblox game built with modern development tools and best practices.
+A modern Roblox game built with industry-standard development tools and best practices.
 
-## Getting Started
-To build the place from scratch, use:
+## Quick Start
 
+### Prerequisites
+- [Roblox Studio](https://create.roblox.com/docs/studio/setting-up-roblox-studio)
+- [Git](https://git-scm.com/)
+
+### Development Setup
 ```bash
-rojo build -o "completionist.rbxlx"
+# Clone the repository
+git clone https://github.com/kristianpetras/completionist.git
+cd completionist
+
+# Install development tools
+rokit install --no-trust-check
+
+# Install dependencies
+wally install
+
+# Build the place file
+rojo build -o completionist.rbxlx
 ```
 
-Next, open `completionist.rbxlx` in Roblox Studio and start the Rojo server:
-
+Open `completionist.rbxlx` in Roblox Studio and start the development server:
 ```bash
 rojo serve
 ```
 
-For more help, check out [the Rojo documentation](https://rojo.space/docs).
-
-## Package Management
-
-This project uses [Wally](https://wally.run/) for package management.
-
-**Install packages:**
-```bash
-wally install
-# or
-npm run install-packages
-```
-
-**Update packages:**
-```bash
-wally update
-# or
-npm run update-packages
-```
-
-**Adding dependencies:**
-Edit `wally.toml` and add to the `[dependencies]` section:
-```toml
-[dependencies]
-Signal = "sleitnick/signal@1.5.0"
-```
-
-Packages are installed to the `Packages/` folder and automatically available in ReplicatedStorage.
-
 ## Documentation
 
-This project uses [Moonwave](https://moonwave.luau-lang.org/) for documentation generation.
+- **📖 API Documentation**: https://kristian-petras.github.io/completionist/
+- **🛠️ Development Guide**: See [AGENTS.md](./AGENTS.md) for comprehensive development instructions
+- **📋 Contributing**: Follow conventional commits for automatic versioning
 
-**Build documentation:**
-```bash
-npm run docs:build
-# or
-moonwave build
+## Project Structure
+
+```
+src/
+├── client/    # Client-side code
+├── server/    # Server-side code
+└── shared/    # Shared utilities
+
+tests/         # Lune test files
+docs-src/      # Documentation source
 ```
 
-**Serve documentation locally:**
-```bash
-npm run docs:serve
-# or
-moonwave dev
-```
+## Technology Stack
 
-**View documentation:**
-- Development: http://localhost:3000
-- Production: https://kristianpetras.github.io/completionist/
+- **Roblox Studio** - Game development platform
+- **Luau** - Programming language
+- **Rojo** - Project management and sync
+- **Wally** - Package manager
+- **Rokit** - Toolchain manager
+- **Release Please** - Automated versioning
+- **GitHub Actions** - CI/CD pipeline
 
-Documentation is automatically built and deployed to GitHub Pages on every push to main.
+## Quality Assurance
 
-## Testing
+This project maintains high code quality through:
+- Automated formatting with StyLua
+- Static analysis with Selene
+- Comprehensive testing with Lune
+- Pre-commit hooks and CI/CD validation
+- Semantic versioning with conventional commits
 
-This project uses [TestEZ](https://github.com/Roblox/testez) for unit testing and test-driven development.
+## License
 
-**Run tests:**
-```bash
-# Install dependencies and build test environment
-npm run test
-
-# Start test server for manual execution in Roblox Studio
-npm run test:watch
-```
-
-**Execute tests in Roblox Studio:**
-1. Run `npm run test:watch` to start the test server
-2. Open Roblox Studio and connect to the test server
-3. Tests will automatically execute when the place loads
-4. Check the output window for test results
-
-**Writing tests:**
-- Create test files in the `tests/` directory
-- Use `.spec.lua` extension for test files
-- Follow TestEZ BDD syntax with `describe`, `it`, and `expect`
-- See `tests/shared/Hello.spec.lua` for an example
-
-**Test structure:**
-```lua
-return function()
-    describe("Your Module", function()
-        it("should do something", function()
-            expect(someValue).to.equal(expectedValue)
-        end)
-    end)
-end
-```
-
-**CI Integration:**
-Tests are automatically built and validated in the CI/CD pipeline on every commit.
-
-## Development Tools
-
-This project uses several development tools to ensure code quality and consistency:
-
-### StyLua - Code Formatting
-[StyLua](https://github.com/JohnnyMorganz/StyLua) automatically formats Lua/Luau code for consistent style.
-
-**Usage:**
-```bash
-# Format all code
-npm run format
-
-# Check formatting without changing files
-npm run format:check
-
-# Format and fix all issues
-npm run fix
-```
-
-**Configuration:**
-- Configuration file: `stylua.toml`
-- 4-space indentation, 120 character line width
-- Auto-formats on save in VS Code
-- Enforced in pre-commit hooks and CI
-
-### Selene - Static Analysis
-[Selene](https://kampfkarren.github.io/selene/) is used for static analysis and linting of Lua/Luau code.
-
-**Usage:**
-```bash
-# Run linting
-npm run lint
-
-# Run linting with minimal output
-npm run lint:fix
-
-# Run all quality checks
-npm run check
-```
-
-**Configuration:**
-- Configuration file: `selene.toml`
-- Standard library: Roblox
-- VS Code integration via the Selene extension
-
-**Key Rules:**
-- Detects undefined variables, unused variables, and shadowing
-- Validates Roblox-specific APIs and patterns
-- Enforces code quality standards
-
-### VS Code Setup
-Install the recommended extensions:
-- `JohnnyMorganz.stylua` - StyLua formatting
-- `Kampfkarren.selene-vscode` - Selene integration
-- `evaera.vscode-rojo` - Rojo integration
-- `JohnnyMorganz.luau-lsp` - Luau language server
-
-The workspace is configured for:
-- Format on save
-- Auto-fix on save
-- Real-time linting feedback
-
-### Pre-commit Hooks
-Pre-commit hooks automatically run formatting and linting before commits:
-
-```bash
-# Install pre-commit (if not already installed)
-pip install pre-commit
-
-# Install the hooks
-pre-commit install
-```
-
-**Hooks run in order:**
-1. StyLua formatting check
-2. Selene linting
-3. General file checks (trailing whitespace, etc.)
-
-### Continuous Integration
-GitHub Actions automatically runs:
-- StyLua formatting verification
-- Selene linting
-- Rojo build verification
-- Code quality checks
-
-All checks must pass before merging pull requests.
-
-## Code Style Standards
-
-- **Indentation**: 4 spaces
-- **Line Width**: 120 characters
-- **Quotes**: Double quotes preferred
-- **Function Calls**: Always use parentheses
-- **Trailing Commas**: Smart (added when beneficial for diffs)
+This project is licensed under the [MIT License](LICENSE).

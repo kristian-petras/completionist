@@ -95,7 +95,7 @@ wally update
 - Follow pattern: `local function testName() ... end`
 - Use descriptive assertions with proper error messages
 - Import shared modules relatively: `require("../src/shared/ModuleName")`
-
+- **IMPORTANT**: Always write tests for new features and bugfixes before implementation
 ### Dependencies
 - **Current packages**: `signal` (events), `comm` (networking)
 - **Add new dependencies**: Update `wally.toml` [dependencies] section
@@ -149,5 +149,6 @@ pre-commit run --all-files
 - Include examples in docstrings
 - Update `docs-src/` for manual documentation
 - Documentation auto-deploys to GitHub Pages on doc changes
+- **IMPORTANT**: Always document new features and significant changes
 
 This project prioritizes code quality, automated workflows, and professional development practices suitable for collaborative Roblox game development.
