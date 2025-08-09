@@ -40,7 +40,7 @@ jobs:
         run: moonwave build || echo "Moonwave build failed, using existing docs if available"
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
