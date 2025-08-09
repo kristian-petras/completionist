@@ -34,28 +34,25 @@ jobs:
           ~/.cargo/registry/cache/
           ~/.cargo/git/db/
           target/
-        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock', '**/aftman.toml') }}
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock', '**/rokit.toml') }}
         restore-keys: |
           ${{ runner.os }}-cargo-
 
-    - name: Cache Aftman tools
+    - name: Cache Rokit tools
       uses: actions/cache@v4
       with:
         path: |
-          ~/.aftman/bin
-          ~/.aftman/tool-storage
-        key: ${{ runner.os }}-aftman-${{ hashFiles('**/aftman.toml') }}
+          ~/.rokit/bin
+          ~/.rokit/tool-storage
+        key: ${{ runner.os }}-rokit-${{ hashFiles('**/rokit.toml') }}
         restore-keys: |
-          ${{ runner.os }}-aftman-
+          ${{ runner.os }}-rokit-
 
-    - name: Setup Aftman
-      uses: ok-nick/setup-aftman@v0.4.2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Setup Rokit
+      uses: rojo-rbx/setup-rokit@v0.1.3
 
-    - name: Install Aftman tools
-      run: aftman install
-
+    - name: Install Rokit tools
+      run: rokit install
     - name: Install StyLua and Selene
       run: |
         if ! command -v stylua &> /dev/null; then
