@@ -1,5 +1,14 @@
 {
-	"recommendations": [
-		"roblox-ts.vscode-roblox-ts"
-	]
+    "recommendations": [
+        "roblox-ts.vscode-roblox-ts",
+        "biomejs.biome",
+        "ms-vscode.vscode-typescript-next",
+        "eamodio.gitlens",
+        "ms-vscode.vscode-json",
+        "orta.vscode-jest"
+    ],
+    "unwantedRecommendations": [
+        "ms-vscode.vscode-eslint",
+        "esbenp.prettier-vscode"
+    ]
 }

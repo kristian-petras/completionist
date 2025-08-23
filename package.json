@@ -40,7 +40,6 @@
     "homepage": "https://github.com/kristian-petras/completionist#readme",
     "devDependencies": {
         "@biomejs/biome": "2.2.2",
-        "@biomejs/cli-darwin-arm64": "2.2.2",
         "@jest/globals": "^30.0.5",
         "@rbxts/compiler-types": "^3.0.0-types.0",
         "@rbxts/types": "^1.0.877",
@@ -51,6 +50,14 @@
         "roblox-ts": "^3.0.0",
         "ts-jest": "^29.4.1",
         "typescript": "^5.9.2"
+    },
+    "optionalDependencies": {
+        "@biomejs/cli-darwin-x64": "2.2.2",
+        "@biomejs/cli-darwin-arm64": "2.2.2",
+        "@biomejs/cli-linux-x64": "2.2.2",
+        "@biomejs/cli-linux-arm64": "2.2.2",
+        "@biomejs/cli-win32-x64": "2.2.2",
+        "@biomejs/cli-win32-arm64": "2.2.2"
     },
     "lint-staged": {
         "src/**/*.{ts,tsx}": [
