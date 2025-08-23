@@ -1,0 +1,46 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended", ":semanticCommits", ":dependencyDashboard"],
+    "schedule": ["before 6am on monday"],
+    "timezone": "UTC",
+    "labels": ["dependencies"],
+    "reviewers": ["@kristian-petras"],
+    "assignees": ["@kristian-petras"],
+    "packageRules": [
+        {
+            "matchPackagePatterns": ["@types/"],
+            "groupName": "TypeScript definitions",
+            "addLabels": ["typescript"]
+        },
+        {
+            "matchPackagePatterns": ["@rbxts/", "roblox-ts"],
+            "groupName": "Roblox TypeScript",
+            "addLabels": ["roblox-ts"]
+        },
+        {
+            "matchPackagePatterns": ["jest", "@jest/", "ts-jest"],
+            "groupName": "Jest testing",
+            "addLabels": ["testing"]
+        },
+        {
+            "matchPackagePatterns": ["@biomejs/", "biome"],
+            "groupName": "Biome tooling",
+            "addLabels": ["tooling"]
+        },
+        {
+            "matchDepTypes": ["devDependencies"],
+            "automerge": true,
+            "automergeType": "pr",
+            "requiredStatusChecks": null,
+            "matchUpdateTypes": ["patch", "minor"]
+        }
+    ],
+    "vulnerabilityAlerts": {
+        "enabled": true,
+        "assignees": ["@kristian-petras"]
+    },
+    "lockFileMaintenance": {
+        "enabled": true,
+        "schedule": ["before 6am on the first day of the month"]
+    }
+}
