@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        // required
+        // required for roblox-ts
         "allowSyntheticDefaultImports": true,
         "downlevelIteration": true,
         "jsx": "react",
@@ -22,6 +22,19 @@
         "outDir": "out",
         "baseUrl": "src",
         "isolatedModules": true,
-        "tsBuildInfoFile": "out/tsconfig.tsbuildinfo"
-    }
+
+        // performance optimizations
+        "incremental": true,
+        "tsBuildInfoFile": "out/tsconfig.tsbuildinfo",
+
+        // path mapping for cleaner imports
+        "paths": {
+            "@/*": ["*"],
+            "@/client/*": ["client/*"],
+            "@/server/*": ["server/*"],
+            "@/shared/*": ["shared/*"]
+        }
+    },
+    "include": ["src/client/**/*", "src/server/**/*", "src/shared/**/*"],
+    "exclude": ["node_modules", "out", "coverage", "**/*.test.ts", "**/*.spec.ts", "**/__tests__/**"]
 }

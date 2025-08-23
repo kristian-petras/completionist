@@ -31,16 +31,14 @@ module.exports = {
         }]
     },
     
-    // Coverage configuration
-    collectCoverage: true,
+    // Coverage configuration - only when explicitly requested
+    collectCoverage: false,
     collectCoverageFrom: [
         'src/**/*.{ts,tsx}',
         '!src/**/*.d.ts',
         '!src/**/__tests__/**',
         '!src/**/*.test.{ts,tsx}',
-        '!src/**/*.spec.{ts,tsx}',
-        '!src/client/**',
-        '!src/server/**'
+        '!src/**/*.spec.{ts,tsx}'
     ],
     coverageDirectory: 'coverage',
     coverageReporters: [
