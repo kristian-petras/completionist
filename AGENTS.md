@@ -28,6 +28,23 @@
 - Pre-commit hooks run Biome check and related tests
 - Release Please automates changelog generation and versioning from conventional commits
 
+## External Documentation & APIs
+When working with external libraries, frameworks, or APIs that you're unfamiliar with, use Context7 MCP to get up-to-date documentation:
+
+**When to use Context7**:
+- Implementing features with unfamiliar libraries or frameworks
+- Understanding API usage patterns and best practices
+- Getting code examples for specific functionality
+- Troubleshooting library-specific issues
+- Learning about new or updated library features
+
+**Usage**:
+1. First use `context7_resolve_library_id` to find the correct library ID
+2. Then use `context7_get_library_docs` with the resolved ID to get documentation
+3. Focus on specific topics when possible to get more relevant information
+
+**Examples**: Jest testing patterns, TypeScript utilities, Roblox API usage, Node.js modules, etc.
+
 ## Post-Implementation Checklist
 After implementing any feature, bugfix, or significant change, **ALWAYS** run through this checklist:
 
