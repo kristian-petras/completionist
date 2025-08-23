@@ -48,13 +48,28 @@ jobs:
             - name: Build project
               run: npm run build
 
+            - name: Generate place file
+              run: npm run build:rojo
+
             - name: Validate build output
               run: |
                   if [ ! -d "out" ]; then
                     echo "❌ Build output directory not found"
                     exit 1
                   fi
+                  if [ ! -f "completionist.rbxl" ]; then
+                    echo "❌ Place file not generated"
+                    exit 1
+                  fi
                   echo "✅ Build completed successfully"
+                  echo "✅ Place file generated successfully ($(wc -c < completionist.rbxl) bytes)"
+
+            - name: Upload build artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                  name: completionist
+                  path: completionist.rbxl
+                  retention-days: 30
 
             - name: Upload coverage to Codecov
               if: github.event_name == 'pull_request' && success()

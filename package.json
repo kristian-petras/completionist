@@ -7,7 +7,10 @@
         "dev": "npm run watch",
         "start": "npm run build",
         "build": "rbxtsc",
+        "build:rojo": "rojo build default.project.json -o completionist.rbxl",
+        "build:place": "npm run build && npm run build:rojo",
         "watch": "rbxtsc -w",
+        "serve": "rojo serve default.project.json",
         "typecheck": "tsc --noEmit",
         "test": "jest",
         "test:watch": "jest --watch",
@@ -48,16 +51,17 @@
         "jest": "^30.0.5",
         "lint-staged": "^16.1.5",
         "roblox-ts": "^3.0.0",
+        "rojo": "1.0.2",
         "ts-jest": "^29.4.1",
         "typescript": "^5.9.2"
     },
     "optionalDependencies": {
-        "@biomejs/cli-darwin-x64": "2.2.2",
         "@biomejs/cli-darwin-arm64": "2.2.2",
-        "@biomejs/cli-linux-x64": "2.2.2",
+        "@biomejs/cli-darwin-x64": "2.2.2",
         "@biomejs/cli-linux-arm64": "2.2.2",
-        "@biomejs/cli-win32-x64": "2.2.2",
-        "@biomejs/cli-win32-arm64": "2.2.2"
+        "@biomejs/cli-linux-x64": "2.2.2",
+        "@biomejs/cli-win32-arm64": "2.2.2",
+        "@biomejs/cli-win32-x64": "2.2.2"
     },
     "lint-staged": {
         "src/**/*.{ts,tsx}": [

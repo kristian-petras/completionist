@@ -40,4 +40,4 @@ Thumbs.db
 
 # Coverage and testing
 coverage/
-.nyc_output/
+.nyc_output/completionist.rbxl
