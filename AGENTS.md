@@ -8,6 +8,8 @@
 - **Lint**: `npm run lint` (Biome linter)
 - **Format**: `npm run format:fix` (auto-format with Biome)
 - **Typecheck**: `npm run typecheck`
+- **Deploy Dev**: `npm run deploy:dev` (deploy to dev environment, requires Foreman + credentials)
+- **Deploy Prod**: `npm run deploy:prod` (deploy to production environment, requires Foreman + credentials)
 
 ## Code Style (Biome Configuration)
 - **Formatting**: 4-space indentation, double quotes, 120 character line width
@@ -27,6 +29,30 @@
 - Source code in `src/`, build output in `out/`
 - Pre-commit hooks run Biome check and related tests
 - Release Please automates changelog generation and versioning from conventional commits
+- **Mantle deployment**: Infrastructure-as-code configuration in `mantle.yml`, Foreman tool management in `foreman.toml`
+
+## Deployment Pipeline
+The project uses **Mantle** for infrastructure-as-code deployments to Roblox:
+
+### Development Deployment
+- **Local**: `npm run deploy:dev` (requires Foreman installation and credentials)
+- **Environments**: Dev environment deploys to `completionist-dev-*` with private access
+- **Requirements**: ROBLOSECURITY cookie and ROBLOX_OPEN_CLOUD_API_KEY environment variables
+
+### Production Deployment
+- **Automatic**: Triggered on GitHub releases via GitHub Actions
+- **Process**: Release Please → Build Artifact → Download Artifact → Deploy via Mantle
+- **Environment**: Production environment with public access
+- **Security**: Uses GitHub Secrets for credentials, production environment protection
+
+### Mantle Configuration
+- **Config File**: `mantle.yml` defines experience structure, places, and social links
+- **State Tracking**: `.mantle-state.yml` (gitignored) tracks deployment state
+- **Tool Management**: `foreman.toml` pins Mantle version for reproducible deployments
+
+### Required Secrets
+- `ROBLOSECURITY`: Roblox authentication cookie (for most resources)
+- `ROBLOX_OPEN_CLOUD_API_KEY`: Open Cloud API key with place publishing permissions
 
 ## External Documentation & APIs
 When working with external libraries, frameworks, or APIs that you're unfamiliar with, use Context7 MCP to get up-to-date documentation:
@@ -70,10 +96,11 @@ After implementing any feature, bugfix, or significant change, **ALWAYS** run th
 - [ ] **If new dependencies added**: Ensure they align with project goals
 - [ ] **If new patterns introduced**: Document in Code Style section
 
-### Integration
-- [ ] Changes work in both client and server environments (if applicable)
-- [ ] No breaking changes to existing APIs (or properly documented)
-- [ ] Consider impact on Roblox-specific constraints and limitations
+### Deployment & Infrastructure
+- [ ] **If deployment configuration changed**: Update mantle.yml and test in dev environment
+- [ ] **If new Roblox resources added**: Update Mantle configuration (badges, developer products, etc.)
+- [ ] **If environment-specific changes**: Test deployment in dev before production
+- [ ] **If deployment fails**: Check GitHub Actions logs and Mantle state file
 
 ### Knowledge Base Update
 - [ ] **If you encountered a difficult issue or non-obvious solution**: Add it to the Knowledge Base section below
@@ -93,8 +120,8 @@ After implementing any feature, bugfix, or significant change, **ALWAYS** run th
 ### Testing Challenges
 *Document Jest setup issues, mocking problems, or coverage configuration gotchas here*
 
-### Development Workflow Issues
-*Document pre-commit hook failures, linting edge cases, or tooling problems here*
+### Deployment Challenges
+*Document Mantle deployment issues, credential management problems, or environment-specific gotchas here*
 
 ---
 **Template for adding new entries:**

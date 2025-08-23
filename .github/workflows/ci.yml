@@ -45,11 +45,8 @@ jobs:
               if: github.event_name == 'pull_request'
               run: npm run test:ci
 
-            - name: Build project
-              run: npm run build
-
-            - name: Generate place file
-              run: npm run build:rojo
+            - name: Build project and generate place file
+              run: npm run build:place
 
             - name: Validate build output
               run: |
