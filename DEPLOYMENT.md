@@ -8,30 +8,21 @@ This guide walks you through setting up local deployment for the Completionist p
 - Git repository cloned
 - Roblox account with game creation permissions
 
-## Step 1: Install Foreman (Roblox Tool Manager)
+## Step 1: Install Rokit (Roblox Tool Manager)
 
-### macOS
+### Installation
 ```bash
-brew install roblox/tap/foreman
+# Install Rokit globally
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/rojo-rbx/rokit/main/scripts/install.sh | bash
 ```
 
-### Windows
-1. Download the latest release from [Foreman GitHub Releases](https://github.com/Roblox/foreman/releases)
-2. Extract and add to your PATH
+Or download from [Rokit GitHub Releases](https://github.com/rojo-rbx/rokit/releases)
 
-### Linux
-```bash
-# Download latest release and add to PATH
-curl -L https://github.com/Roblox/foreman/releases/latest/download/foreman-linux.zip -o foreman.zip
-unzip foreman.zip
-sudo mv foreman /usr/local/bin/
-```
-
-## Step 2: Install Mantle
+## Step 2: Install Tools
 
 ```bash
-# Install Mantle via Foreman
-foreman install
+# Install tools defined in rokit.toml (skip trust prompts for automation)
+rokit install --no-trust-check
 ```
 
 ## Step 3: Set Up Environment Variables
@@ -109,10 +100,10 @@ npm run serve            # Start Rojo sync server for Studio
 # Production (use with caution)
 npm run deploy:prod      # Deploy to production
 
-# Mantle commands (after foreman install)
-mantle deploy --environment dev    # Deploy to specific environment
-mantle state show                  # Show current deployment state
-mantle --help                     # Show all available commands
+# Mantle commands (after rokit install)
+rokit run mantle deploy --environment dev    # Deploy to specific environment
+rokit run mantle state show                  # Show current deployment state
+rokit run mantle --help                     # Show all available commands
 ```
 
 ## Troubleshooting
@@ -130,10 +121,10 @@ mantle --help                     # Show all available commands
 - Run `npm run build:place` first
 - Check that `completionist.rbxl` exists in project root
 
-### Foreman Installation Issues
-- Make sure Foreman is in your PATH
-- Try running `foreman --version` to verify installation
-- Check [Foreman documentation](https://github.com/Roblox/foreman) for help
+### Rokit Installation Issues
+- Make sure Rokit is in your PATH
+- Try running `rokit --version` to verify installation
+- Check [Rokit documentation](https://github.com/rojo-rbx/rokit) for help
 
 ## Security Notes
 

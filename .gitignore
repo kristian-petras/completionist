@@ -38,9 +38,6 @@ Thumbs.db
 *.rbxm
 *.rbxmx
 
-# Mantle deployment state
-.mantle-state.yml
-
 # Coverage and testing
 coverage/
 .nyc_output/completionist.rbxl

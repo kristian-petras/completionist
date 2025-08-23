@@ -8,8 +8,8 @@
 - **Lint**: `npm run lint` (Biome linter)
 - **Format**: `npm run format:fix` (auto-format with Biome)
 - **Typecheck**: `npm run typecheck`
-- **Deploy Dev**: `npm run deploy:dev` (deploy to dev environment, requires Foreman + credentials)
-- **Deploy Prod**: `npm run deploy:prod` (deploy to production environment, requires Foreman + credentials)
+- **Deploy Dev**: `npm run deploy:dev` (deploy to dev environment, requires Rokit + credentials)
+- **Deploy Prod**: `npm run deploy:prod` (deploy to production environment, requires Rokit + credentials)
 
 ## Code Style (Biome Configuration)
 - **Formatting**: 4-space indentation, double quotes, 120 character line width
@@ -29,13 +29,13 @@
 - Source code in `src/`, build output in `out/`
 - Pre-commit hooks run Biome check and related tests
 - Release Please automates changelog generation and versioning from conventional commits
-- **Mantle deployment**: Infrastructure-as-code configuration in `mantle.yml`, Foreman tool management in `foreman.toml`
+- **Mantle deployment**: Infrastructure-as-code configuration in `mantle.yml`, Rokit tool management in `rokit.toml`
 
 ## Deployment Pipeline
 The project uses **Mantle** for infrastructure-as-code deployments to Roblox:
 
 ### Development Deployment
-- **Local**: `npm run deploy:dev` (requires Foreman installation and credentials)
+- **Local**: `npm run deploy:dev` (requires Rokit installation and credentials)
 - **Environments**: Dev environment deploys to `completionist-dev-*` with private access
 - **Requirements**: ROBLOSECURITY cookie and ROBLOX_OPEN_CLOUD_API_KEY environment variables
 
@@ -48,7 +48,7 @@ The project uses **Mantle** for infrastructure-as-code deployments to Roblox:
 ### Mantle Configuration
 - **Config File**: `mantle.yml` defines experience structure, places, and social links
 - **State Tracking**: `.mantle-state.yml` (gitignored) tracks deployment state
-- **Tool Management**: `foreman.toml` pins Mantle version for reproducible deployments
+- **Tool Management**: `rokit.toml` pins Mantle version for reproducible deployments
 
 ### Required Secrets
 - `ROBLOSECURITY`: Roblox authentication cookie (for most resources)
