@@ -26,3 +26,35 @@
 - Roblox TypeScript project with client/server/shared architecture
 - Source code in `src/`, build output in `out/`
 - Pre-commit hooks run Biome check and related tests
+
+## Post-Implementation Checklist
+After implementing any feature, bugfix, or significant change, **ALWAYS** run through this checklist:
+
+### Code Quality
+- [ ] Run `npm run build` - build passes without errors
+- [ ] Run `npm run typecheck` - no TypeScript errors
+- [ ] Run `npm run lint` - no linting errors
+- [ ] Run `npm test` - all tests pass
+- [ ] Code follows established patterns and naming conventions
+- [ ] Added appropriate JSDoc comments for public APIs
+- [ ] No hardcoded values - use constants or configuration
+
+### Testing
+- [ ] Added tests for new functionality (maintain coverage thresholds)
+- [ ] Updated existing tests if behavior changed
+- [ ] Edge cases and error conditions are tested
+- [ ] Mock external dependencies appropriately
+
+### Documentation & Structure
+- [ ] Updated relevant README/documentation if needed
+- [ ] **If project structure changed**: Update this AGENTS.md file
+- [ ] **If new commands/scripts added**: Update Commands section above
+- [ ] **If new dependencies added**: Ensure they align with project goals
+- [ ] **If new patterns introduced**: Document in Code Style section
+
+### Integration
+- [ ] Changes work in both client and server environments (if applicable)
+- [ ] No breaking changes to existing APIs (or properly documented)
+- [ ] Consider impact on Roblox-specific constraints and limitations
+
+**Important**: If you modified project structure, configuration, or established patterns, update this AGENTS.md file to reflect those changes for future agents.
