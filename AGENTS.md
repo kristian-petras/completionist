@@ -26,6 +26,7 @@
 - Roblox TypeScript project with client/server/shared architecture
 - Source code in `src/`, build output in `out/`
 - Pre-commit hooks run Biome check and related tests
+- Release Please automates changelog generation and versioning from conventional commits
 
 ## Post-Implementation Checklist
 After implementing any feature, bugfix, or significant change, **ALWAYS** run through this checklist:
@@ -57,4 +58,33 @@ After implementing any feature, bugfix, or significant change, **ALWAYS** run th
 - [ ] No breaking changes to existing APIs (or properly documented)
 - [ ] Consider impact on Roblox-specific constraints and limitations
 
+### Knowledge Base Update
+- [ ] **If you encountered a difficult issue or non-obvious solution**: Add it to the Knowledge Base section below
+- [ ] **If you had to research Roblox-specific limitations**: Document the findings
+- [ ] **If build/test failures had unclear error messages**: Document the root cause and solution
+
 **Important**: If you modified project structure, configuration, or established patterns, update this AGENTS.md file to reflect those changes for future agents.
+
+## Knowledge Base - Common Pitfalls & Solutions
+
+### Roblox TypeScript Specific Issues
+*Document Roblox-specific limitations, rbxtsc compiler quirks, or Roblox API gotchas here*
+
+### Build & Configuration Issues  
+*Document build failures, configuration problems, or dependency conflicts here*
+
+### Testing Challenges
+*Document Jest setup issues, mocking problems, or coverage configuration gotchas here*
+
+### Development Workflow Issues
+*Document pre-commit hook failures, linting edge cases, or tooling problems here*
+
+---
+**Template for adding new entries:**
+```
+#### Issue: [Brief description]
+**Problem**: What went wrong or was confusing
+**Root Cause**: Why it happened  
+**Solution**: How to fix it
+**Prevention**: How to avoid it in the future
+```
