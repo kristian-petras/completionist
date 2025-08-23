@@ -1,6 +1,43 @@
+# Dependencies
 /node_modules
+
+# Build outputs
 /out
 /include
 *.tsbuildinfo
 
+# IDE and Editor files
 .DS_Store
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS generated files
+Thumbs.db
+*.tmp
+*.temp
+
+# Roblox Studio files
+*.rbxl
+*.rbxlx
+*.rbxm
+*.rbxmx
+
+# Coverage and testing
+coverage/
+.nyc_output/

@@ -1,28 +1,46 @@
 {
-  "name": "completionist",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "rbxtsc",
-    "watch": "rbxtsc -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kristian-petras/completionist.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/kristian-petras/completionist/issues"
-  },
-  "homepage": "https://github.com/kristian-petras/completionist#readme",
-  "devDependencies": {
-    "@rbxts/compiler-types": "^3.0.0-types.0",
-    "@rbxts/types": "^1.0.877",
-    "roblox-ts": "^3.0.0",
-    "typescript": "^5.9.2"
-  }
+    "name": "completionist",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "rbxtsc",
+        "watch": "rbxtsc -w",
+        "lint": "biome lint src/",
+        "lint:fix": "biome lint --write src/",
+        "format": "biome format src/",
+        "format:fix": "biome format --write src/",
+        "check": "biome check src/",
+        "check:fix": "biome check --write src/",
+        "prepare": "husky"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kristian-petras/completionist.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/kristian-petras/completionist/issues"
+    },
+    "homepage": "https://github.com/kristian-petras/completionist#readme",
+    "devDependencies": {
+        "@biomejs/biome": "^2.2.2",
+        "@rbxts/compiler-types": "^3.0.0-types.0",
+        "@rbxts/types": "^1.0.877",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.1.5",
+        "roblox-ts": "^3.0.0",
+        "typescript": "^5.9.2"
+    },
+    "lint-staged": {
+        "src/**/*.{ts,tsx}": [
+            "biome check --write"
+        ],
+        "*.{json,jsonc}": [
+            "biome format --write"
+        ]
+    }
 }
