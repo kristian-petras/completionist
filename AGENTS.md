@@ -37,7 +37,7 @@ The project uses **Mantle** for infrastructure-as-code deployments to Roblox:
 ### Development Deployment
 - **Local**: `npm run deploy:dev` (requires Rokit installation and credentials)
 - **Environments**: Dev environment deploys to `completionist-dev-*` with private access
-- **Requirements**: ROBLOSECURITY cookie and ROBLOX_OPEN_CLOUD_API_KEY environment variables
+- **Requirements**: ROBLOSECURITY cookie and MANTLE_OPEN_CLOUD_API_KEY environment variables
 
 ### Production Deployment
 - **Automatic**: Triggered on GitHub releases via GitHub Actions
@@ -52,7 +52,7 @@ The project uses **Mantle** for infrastructure-as-code deployments to Roblox:
 
 ### Required Secrets
 - `ROBLOSECURITY`: Roblox authentication cookie (for most resources)
-- `ROBLOX_OPEN_CLOUD_API_KEY`: Open Cloud API key with place publishing permissions
+- `MANTLE_OPEN_CLOUD_API_KEY`: Open Cloud API key with place publishing permissions
 
 ## External Documentation & APIs
 When working with external libraries, frameworks, or APIs that you're unfamiliar with, use Context7 MCP to get up-to-date documentation:

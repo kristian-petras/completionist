@@ -20,7 +20,8 @@
         "check": "biome check src/",
         "check:fix": "biome check --write src/",
         "audit": "npm audit --audit-level=moderate",
-        "prepare": "husky"
+        "prepare": "husky",
+        "plugin:install": "rojo plugin install"
     },
     "repository": {
         "type": "git",

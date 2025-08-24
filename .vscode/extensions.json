@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "roblox-ts.vscode-roblox-ts",
+        "evaera.vscode-rojo",
         "biomejs.biome",
         "ms-vscode.vscode-typescript-next",
         "eamodio.gitlens",

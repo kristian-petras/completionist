@@ -1,2 +1,3 @@
 [tools]
 mantle = "Blake-Mealey/mantle@0.11.18"
+rojo = "rojo-rbx/rojo@7.4.4"
