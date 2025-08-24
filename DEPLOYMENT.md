@@ -75,7 +75,7 @@ npm run deploy:prod
 2. Click **Settings** → **Secrets and variables** → **Actions**
 3. Add these secrets:
    - `ROBLOSECURITY`: Your Roblox authentication cookie
-   - `ROBLOX_OPEN_CLOUD_API_KEY`: Your Open Cloud API key
+   - `MANTLE_OPEN_CLOUD_API_KEY`: Your Open Cloud API key
 
 ## Deployment Environments
 
@@ -101,9 +101,9 @@ npm run serve            # Start Rojo sync server for Studio
 npm run deploy:prod      # Deploy to production
 
 # Mantle commands (after rokit install)
-rokit run mantle deploy --environment dev    # Deploy to specific environment
-rokit run mantle state show                  # Show current deployment state
-rokit run mantle --help                     # Show all available commands
+mantle deploy --environment dev    # Deploy to specific environment
+mantle state show                  # Show current deployment state
+mantle --help                     # Show all available commands
 ```
 
 ## Troubleshooting

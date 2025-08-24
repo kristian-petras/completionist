@@ -9,7 +9,7 @@ environments:
     targetAccess: private
   - label: prod
     branches: [main]
-    targetAccess: public
+    targetAccess: private
 
 target:
   experience:

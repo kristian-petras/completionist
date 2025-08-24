@@ -77,8 +77,8 @@ jobs:
       - name: Install tools
         run: rokit install --no-trust-check
       
-      - name: Deploy project
-        run: mantle deploy
+      - name: Deploy to Roblox (Production)
+        run: mantle deploy --environment prod --yes
         env:
           ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
           MANTLE_OPEN_CLOUD_API_KEY: ${{ secrets.MANTLE_OPEN_CLOUD_API_KEY }}
