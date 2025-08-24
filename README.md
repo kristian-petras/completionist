@@ -1,76 +1,124 @@
 # Completionist
-[![Release](https://github.com/kristian-petras/completionist/actions/workflows/release.yml/badge.svg)](https://github.com/kristian-petras/completionist/actions/workflows/release.yml)
-[![Documentation](https://github.com/kristian-petras/completionist/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/kristian-petras/completionist/actions/workflows/publish-docs.yml)
-[![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Wally](https://img.shields.io/badge/Wally-1.0.0-blue.svg)](https://wally.run/package/kristian-petras/completionist)
 
-A modern Roblox game built with industry-standard development tools and best practices.
+A Roblox simulator game built with TypeScript featuring class-based progression, grinding mechanics, and meta-progression through rebirth systems.
 
-## Quick Start
+## 🎮 Game Concept
+
+Completionist is a simulation game where players:
+
+1. **Choose a Class** - Start with basic classes like Fisherman, Lumberjack, or Miner
+2. **Grind & Progress** - Collect resources, gain experience, and improve your character
+3. **Rebirth for Meta Upgrades** - Reset progress to gain permanent bonuses and multipliers
+4. **Unlock New Content** - Access advanced classes and prestige existing ones
+5. **Repeat & Optimize** - Create the perfect progression strategy
+
+### Core Gameplay Loop
+
+```
+Select Class → Grind Resources → Level Up → Rebirth → Meta Upgrades → New Classes → Prestige
+    ↑                                                                                    ↓
+    ←←←←←←←←←←←←←←←←←←←← Repeat with Better Efficiency ←←←←←←←←←←←←←←←←←←←←
+```
+
+## 🏗️ Project Structure
+
+This project follows Roblox TypeScript architecture:
+
+- **`src/client/`** - Client-side game logic (UI, input handling, effects)
+- **`src/server/`** - Server-side game logic (data persistence, validation, anti-cheat)  
+- **`src/shared/`** - Shared utilities, types, and constants used by both client and server
+
+## 🚀 Getting Started
 
 ### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher)
 - [Roblox Studio](https://create.roblox.com/docs/studio/setting-up-roblox-studio)
-- [Git](https://git-scm.com/)
+- [roblox-ts](https://roblox-ts.com/) (installed via npm)
 
-### Development Setup
-```bash
-# Clone the repository
-git clone https://github.com/kristian-petras/completionist.git
-cd completionist
+### Installation
 
-# Install development tools
-rokit install --no-trust-check
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/kristian-petras/completionist.git
+   cd completionist
+   ```
 
-# Install dependencies
-wally install
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Build the place file
-rojo build -o completionist.rbxlx
-```
+3. **Build the project**
+   ```bash
+   npm run build
+   ```
 
-Open `completionist.rbxlx` in Roblox Studio and start the development server:
-```bash
-rojo serve
-```
+4. **Watch for changes during development**
+   ```bash
+   npm run watch
+   ```
 
-## Documentation
+### Development Workflow
 
-- **📖 API Documentation**: https://kristian-petras.github.io/completionist/
-- **🛠️ Development Guide**: See [AGENTS.md](./AGENTS.md) for comprehensive development instructions
-- **📋 Contributing**: Follow conventional commits for automatic versioning
+- **Build**: `npm run build` - Compile TypeScript to Luau
+- **Watch**: `npm run watch` - Auto-rebuild on file changes  
+- **Test**: `npm test` - Run all tests
+- **Lint**: `npm run lint` - Check code style
+- **Format**: `npm run format:fix` - Auto-format code
 
-## Project Structure
+## 🎯 Planned Features
 
-```
-src/
-├── client/    # Client-side code
-├── server/    # Server-side code
-└── shared/    # Shared utilities
+### Classes System
+- **Starter Classes**: Fisherman, Lumberjack, Miner
+- **Advanced Classes**: Unlocked through progression
+- **Class Prestige**: Enhanced versions of mastered classes
 
-tests/         # Lune test files
-docs-src/      # Documentation source
-```
+### Progression Systems
+- **Experience & Levels**: Gain XP through class activities
+- **Resource Collection**: Gather class-specific materials
+- **Equipment Upgrades**: Better tools for efficiency
+- **Skill Trees**: Customize your class abilities
 
-## Technology Stack
+### Meta-Progression
+- **Rebirth System**: Reset for permanent bonuses
+- **Meta Currency**: Spend on global upgrades
+- **Multipliers**: Increase efficiency across all classes
+- **Achievement System**: Long-term goals and rewards
 
-- **Roblox Studio** - Game development platform
-- **Luau** - Programming language
-- **Rojo** - Project management and sync
-- **Wally** - Package manager
-- **Rokit** - Toolchain manager
-- **Release Please** - Automated versioning
-- **GitHub Actions** - CI/CD pipeline
+### Quality of Life
+- **Auto-Collection**: Reduce repetitive clicking
+- **Offline Progress**: Continue earning while away
+- **Statistics Tracking**: Detailed progress analytics
+- **Customization**: Personalize your experience
 
-## Quality Assurance
+## 🛠️ Contributing
 
-This project maintains high code quality through:
-- Automated formatting with StyLua
-- Static analysis with Selene
-- Comprehensive testing with Lune
-- Pre-commit hooks and CI/CD validation
-- Semantic versioning with conventional commits
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Follow** the code style guidelines in `AGENTS.md`
+4. **Add** tests for new functionality
+5. **Commit** using [conventional commits](https://conventionalcommits.org/)
+6. **Push** to your branch (`git push origin feature/amazing-feature`)
+7. **Open** a Pull Request
 
-## License
+### Code Standards
 
-This project is licensed under the [MIT License](LICENSE).
+- TypeScript with strict typing
+- 4-space indentation, double quotes
+- Comprehensive test coverage (70%+ functions/lines)
+- Biome for linting and formatting
+- Pre-commit hooks enforce code quality
+
+## 📝 License
+
+This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Support
+
+- **Issues**: [GitHub Issues](https://github.com/kristian-petras/completionist/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/kristian-petras/completionist/discussions)
+
+---
+
+*Built with ❤️ using [roblox-ts](https://roblox-ts.com/) and modern TypeScript tooling.*

@@ -1,11 +1,15 @@
 {
-  "recommendations": [
-    "JohnnyMorganz.stylua",
-    "Kampfkarren.selene-vscode",
-    "evaera.vscode-rojo",
-    "JohnnyMorganz.luau-lsp",
-    "ms-vscode.vscode-json",
-    "redhat.vscode-yaml",
-    "EditorConfig.EditorConfig"
-  ]
+    "recommendations": [
+        "roblox-ts.vscode-roblox-ts",
+        "evaera.vscode-rojo",
+        "biomejs.biome",
+        "ms-vscode.vscode-typescript-next",
+        "eamodio.gitlens",
+        "ms-vscode.vscode-json",
+        "orta.vscode-jest"
+    ],
+    "unwantedRecommendations": [
+        "ms-vscode.vscode-eslint",
+        "esbenp.prettier-vscode"
+    ]
 }

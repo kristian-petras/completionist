@@ -1,15 +1,17 @@
 version: 2
-
 updates:
-  # Enable version updates for GitHub Actions
-  - package-ecosystem: "github-actions"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
-    open-pull-requests-limit: 5
+      time: "09:00"
+    open-pull-requests-limit: 10
     reviewers:
       - "kristian-petras"
-    labels:
-      - "dependencies"
-      - "github-actions"
+    assignees:
+      - "kristian-petras"
+    commit-message:
+      prefix: "deps"
+      prefix-development: "deps-dev"
+      include: "scope"

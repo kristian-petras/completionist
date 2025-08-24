@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        // required for roblox-ts
+        "allowSyntheticDefaultImports": true,
+        "downlevelIteration": true,
+        "jsx": "react",
+        "jsxFactory": "React.createElement",
+        "jsxFragmentFactory": "React.Fragment",
+        "module": "commonjs",
+        "moduleResolution": "Node",
+        "noLib": true,
+        "resolveJsonModule": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleDetection": "force",
+        "strict": true,
+        "target": "ESNext",
+        "typeRoots": ["node_modules/@rbxts"],
+
+        // configurable
+        "rootDir": "src",
+        "outDir": "out",
+        "baseUrl": "src",
+        "isolatedModules": true,
+
+        // performance optimizations
+        "incremental": true,
+        "tsBuildInfoFile": "out/tsconfig.tsbuildinfo",
+
+        // path mapping for cleaner imports
+        "paths": {
+            "@/*": ["*"]
+        }
+    },
+    "include": ["src/client/**/*", "src/server/**/*", "src/shared/**/*"],
+    "exclude": ["node_modules", "out", "coverage", "**/*.test.ts", "**/*.spec.ts", "**/__tests__/**"]
+}

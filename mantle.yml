@@ -1,0 +1,55 @@
+# Completionist - Mantle Deployment Configuration
+# Infrastructure-as-code for Roblox experience deployment
+# Documentation: https://mantledeploy.vercel.app/
+
+environments:
+  - label: dev
+    branches: [typescript]
+    targetNamePrefix: environmentLabel
+    targetAccess: private
+  - label: prod
+    branches: [main]
+    targetAccess: private
+
+target:
+  experience:
+    # Optional: Use environment variable for universe ID
+    # id: ${ROBLOX_UNIVERSE_ID}
+    configuration:
+      genre: rpg
+      playableDevices:
+        - computer
+        - phone
+        - tablet
+        - console
+      privateServers:
+        price: 100
+    places:
+      start:
+        # Optional: Use environment variable for place ID
+        # id: ${ROBLOX_PLACE_ID}
+        file: completionist.rbxl
+        configuration:
+          name: Completionist
+          description: "A Roblox simulator game with class-based progression, grinding mechanics, and meta-progression through rebirth systems"
+          maxPlayerCount: 30
+          allowCopying: false
+
+# Future expansion examples (uncomment as needed):
+#
+# assets:
+#   - assets/*
+#   - file: marketing/icon.png
+#     name: game-icon
+#
+# badges:
+#   first_rebirth:
+#     name: "First Rebirth"
+#     description: "Completed your first rebirth!"
+#     icon: assets/badges/first_rebirth.png
+#
+# products:
+#   double_xp:
+#     name: "Double XP Boost"
+#     description: "2x experience for 1 hour"
+#     price: 100

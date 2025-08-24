@@ -1,0 +1,78 @@
+{
+    "name": "completionist",
+    "version": "1.0.0",
+    "description": "A Roblox simulator game with class-based progression, grinding mechanics, and meta-progression through rebirth systems",
+    "main": "out/server/main.server.luau",
+    "scripts": {
+        "dev": "npm run watch",
+        "start": "npm run build",
+        "build": "rbxtsc",
+        "build:rojo": "rojo build default.project.json -o completionist.rbxl",
+        "build:place": "npm run build && npm run build:rojo",
+        "watch": "rbxtsc -w",
+        "serve": "rojo serve default.project.json",
+        "deploy:dev": "npm run build:place && mantle deploy --environment dev",
+        "deploy:prod": "npm run build:place && mantle deploy --environment prod",
+        "typecheck": "tsc --noEmit",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:ci": "jest --coverage --watchAll=false --passWithNoTests",
+        "check": "biome check src/",
+        "check:fix": "biome check --write src/",
+        "audit": "npm audit --audit-level=moderate",
+        "prepare": "husky",
+        "plugin:install": "rojo plugin install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kristian-petras/completionist.git"
+    },
+    "keywords": [
+        "roblox",
+        "typescript",
+        "simulator",
+        "game",
+        "rbxts",
+        "progression",
+        "grinding",
+        "rebirth"
+    ],
+    "author": "kristian-petras",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/kristian-petras/completionist/issues"
+    },
+    "homepage": "https://github.com/kristian-petras/completionist#readme",
+    "devDependencies": {
+        "@biomejs/biome": "2.2.2",
+        "@jest/globals": "^30.0.5",
+        "@rbxts/compiler-types": "^3.0.0-types.0",
+        "@rbxts/types": "^1.0.877",
+        "@types/jest": "^30.0.0",
+        "husky": "^9.1.7",
+        "jest": "^30.0.5",
+        "lint-staged": "^16.1.5",
+        "roblox-ts": "^3.0.0",
+        "rojo": "1.0.2",
+        "ts-jest": "^29.4.1",
+        "typescript": "^5.9.2"
+    },
+    "optionalDependencies": {
+        "@biomejs/cli-darwin-arm64": "2.2.2",
+        "@biomejs/cli-darwin-x64": "2.2.2",
+        "@biomejs/cli-linux-arm64": "2.2.2",
+        "@biomejs/cli-linux-x64": "2.2.2",
+        "@biomejs/cli-win32-arm64": "2.2.2",
+        "@biomejs/cli-win32-x64": "2.2.2"
+    },
+    "lint-staged": {
+        "src/**/*.{ts,tsx}": [
+            "biome check --write",
+            "npm run test:ci -- --findRelatedTests --passWithNoTests"
+        ],
+        "*.{json,jsonc}": [
+            "biome format --write"
+        ]
+    }
+}
