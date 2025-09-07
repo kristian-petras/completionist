@@ -18,6 +18,6 @@ export function createBaseplate(): Part {
 
     baseplate.Parent = game.Workspace;
 
-    print(`[BaseplatGenerator] Created baseplate`);
+    print(`[BaseplateGenerator] Created baseplate`);
     return baseplate;
 }

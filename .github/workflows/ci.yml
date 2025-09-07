@@ -61,10 +61,11 @@ jobs:
                   echo "✅ Build completed successfully"
                   echo "✅ Place file generated successfully ($(wc -c < completionist.rbxl) bytes)"
 
-            - name: Upload build artifacts
+            # Upload artifacts only for PRs (for testing/review purposes)
+            - name: Upload build artifacts (PR only)
+              if: github.event_name == 'pull_request'
               uses: actions/upload-artifact@v4
               with:
                   name: completionist
                   path: completionist.rbxl
-                  retention-days: 
-                  
+                  retention-days: 7
