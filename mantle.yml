@@ -6,10 +6,10 @@ environments:
   - label: dev
     branches: [typescript]
     targetNamePrefix: environmentLabel
-    targetAccess: private
+    targetAccess: friends
   - label: prod
     branches: [main]
-    targetAccess: private
+    targetAccess: friends
 
 target:
   experience:
