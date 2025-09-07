@@ -13,7 +13,7 @@
         "serve": "rojo serve default.project.json",
         "deploy:dev": "npm run build:place && mantle deploy --environment dev",
         "deploy:prod": "npm run build:place && mantle deploy --environment prod",
-        "typecheck": "tsc --noEmit",
+        "typecheck": "rbxtsc",
         "test": "jest",
         "test:watch": "jest --watch",
         "test:ci": "jest --coverage --watchAll=false --passWithNoTests",
@@ -69,6 +69,7 @@
     "lint-staged": {
         "src/**/*.{ts,tsx}": [
             "biome check --write",
+            "npm run build",
             "npm run test:ci -- --findRelatedTests --passWithNoTests"
         ],
         "*.{json,jsonc}": [
