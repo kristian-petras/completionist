@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.5.0](https://github.com/kristian-petras/completionist/compare/v1.4.1...v1.5.0) (2025-09-07)
+
+
+### Features
+
+* add automatic Rokit tool installation via postinstall script ([053db54](https://github.com/kristian-petras/completionist/commit/053db548bdbdd07c9f5041a53e2ab39c8335bad9))
+* auto-commit mantle state after production deployments ([796f484](https://github.com/kristian-petras/completionist/commit/796f48469d1a253aa7127f18b83a9bbea3522723))
+* enable friends access and activate experience in deployment configuration ([099a9f0](https://github.com/kristian-petras/completionist/commit/099a9f0feb7add7651962cbf3e58dddbf36478ad))
+
 ## [1.4.1](https://github.com/kristian-petras/completionist/compare/v1.4.0...v1.4.1) (2025-09-07)
 
 
