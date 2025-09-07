@@ -52,7 +52,7 @@
         "@types/jest": "^30.0.0",
         "husky": "^9.1.7",
         "jest": "^30.0.5",
-        "lint-staged": "^16.1.5",
+        "lint-staged": "^16.1.6",
         "roblox-ts": "^3.0.0",
         "rojo": "1.0.2",
         "ts-jest": "^29.4.1",
