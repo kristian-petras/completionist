@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.1](https://github.com/kristian-petras/completionist/compare/v1.4.0...v1.4.1) (2025-09-07)
+
+
+### Bug Fixes
+
+* optimize CI/Release workflows and resolve configuration warnings ([588a0f0](https://github.com/kristian-petras/completionist/commit/588a0f0034b11a8fe4332440d614b4afe8209b76))
+* restore release-type parameter to keep Release Please in simple mode ([06f26c8](https://github.com/kristian-petras/completionist/commit/06f26c826ec89b934f2d4adef0a29ef4c3a5add0))
+
 ## [1.4.0](https://github.com/kristian-petras/completionist/compare/v1.3.0...v1.4.0) (2025-09-07)
 
 
