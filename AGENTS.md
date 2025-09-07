@@ -17,6 +17,7 @@
 - **Types**: Strict TypeScript mode, explicit any warnings, null assertions allowed
 - **Naming**: camelCase for variables/functions, PascalCase for classes/interfaces
 - **Error Handling**: Prefer explicit error handling over exceptions
+- **Constants**: Extract magic numbers and hardcoded values to named constants at the top of files
 
 ## Testing (Jest)
 - Test files: `*.test.ts` or `*.spec.ts` in `src/` or `__tests__/` folders  
