@@ -68,46 +68,6 @@ jobs:
                   path: completionist.rbxl
                   retention-days: 30
 
-            - name: Upload coverage to Codecov
-              if: github.event_name == 'pull_request' && success()
-              uses: codecov/codecov-action@v4
-              with:
-                  token: ${{ secrets.CODECOV_TOKEN }}
-                  files: ./coverage/lcov.info
-                  fail_ci_if_error: false
-                  verbose: true
-
-            - name: Comment coverage on PR
-              if: github.event_name == 'pull_request' && success()
-              uses: actions/github-script@v7
-              with:
-                  script: |
-                      const fs = require('fs');
-                      try {
-                        const coverageData = JSON.parse(fs.readFileSync('./coverage/coverage-summary.json', 'utf8'));
-                        const { lines, statements, functions, branches } = coverageData.total;
-                        
-                        const body = `📊 **Test Coverage Report**
-                      
-                      | Metric | Coverage | Threshold |
-                      |--------|----------|-----------|
-                      | Lines | ${lines.pct}% | 70% |
-                      | Statements | ${statements.pct}% | 70% |
-                      | Functions | ${functions.pct}% | 70% |
-                      | Branches | ${branches.pct}% | 60% |
-                      
-                      ${lines.pct < 70 || statements.pct < 70 || functions.pct < 70 || branches.pct < 60 ? '⚠️ Coverage below threshold!' : '✅ Coverage meets requirements!'}`;
-                        
-                        github.rest.issues.createComment({
-                          issue_number: context.issue.number,
-                          owner: context.repo.owner,
-                          repo: context.repo.repo,
-                          body
-                        });
-                      } catch (error) {
-                        console.log('Coverage summary not found or invalid');
-                      }
-
     # Auto-comment on failures
     pr-feedback:
         name: PR Feedback
