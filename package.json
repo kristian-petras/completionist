@@ -1,6 +1,6 @@
 {
     "name": "completionist",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "description": "A Roblox simulator game with class-based progression, grinding mechanics, and meta-progression through rebirth systems",
     "main": "out/server/main.server.luau",
     "scripts": {
