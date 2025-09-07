@@ -66,4 +66,5 @@ jobs:
               with:
                   name: completionist
                   path: completionist.rbxl
-                  retention-days: 30
+                  retention-days: 
+                  
