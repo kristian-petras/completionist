@@ -59,7 +59,7 @@
         "typescript": "^5.9.2"
     },
     "optionalDependencies": {
-        "@biomejs/cli-darwin-arm64": "2.2.2",
+        "@biomejs/cli-darwin-arm64": "2.2.3",
         "@biomejs/cli-darwin-x64": "2.2.2",
         "@biomejs/cli-linux-arm64": "2.2.2",
         "@biomejs/cli-linux-x64": "2.2.2",
