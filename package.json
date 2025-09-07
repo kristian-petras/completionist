@@ -7,12 +7,12 @@
         "dev": "npm run watch",
         "start": "npm run build",
         "build": "rbxtsc",
-        "build:rojo": "rojo build default.project.json -o completionist.rbxl",
+        "build:rojo": "~/.rokit/bin/rojo build default.project.json -o completionist.rbxl",
         "build:place": "npm run build && npm run build:rojo",
         "watch": "rbxtsc -w",
-        "serve": "rojo serve default.project.json",
-        "deploy:dev": "npm run build:place && mantle deploy --environment dev",
-        "deploy:prod": "npm run build:place && mantle deploy --environment prod",
+        "serve": "~/.rokit/bin/rojo serve default.project.json",
+        "deploy:dev": "npm run build:place && ~/.rokit/bin/mantle deploy --environment dev",
+        "deploy:prod": "npm run build:place && ~/.rokit/bin/mantle deploy --environment prod",
         "typecheck": "rbxtsc",
         "test": "jest",
         "test:watch": "jest --watch",
@@ -21,7 +21,8 @@
         "check:fix": "biome check --write src/",
         "audit": "npm audit --audit-level=moderate",
         "prepare": "husky",
-        "plugin:install": "rojo plugin install"
+        "postinstall": "npx rokit-npm trust Blake-Mealey/mantle rojo-rbx/rojo && npx rokit-npm install",
+        "plugin:install": "~/.rokit/bin/rojo plugin install"
     },
     "repository": {
         "type": "git",
@@ -55,6 +56,7 @@
         "lint-staged": "^16.1.6",
         "roblox-ts": "^3.0.0",
         "rojo": "1.0.2",
+        "rokit-npm": "^1.0.1",
         "ts-jest": "^29.4.1",
         "typescript": "^5.9.2"
     },
