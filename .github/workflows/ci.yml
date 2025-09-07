@@ -67,22 +67,3 @@ jobs:
                   name: completionist
                   path: completionist.rbxl
                   retention-days: 30
-
-    # Auto-comment on failures
-    pr-feedback:
-        name: PR Feedback
-        runs-on: ubuntu-latest
-        if: failure() && github.event_name == 'pull_request'
-        needs: [test-and-build]
-
-        steps:
-            - name: Comment on PR failure
-              uses: actions/github-script@v7
-              with:
-                  script: |
-                      github.rest.issues.createComment({
-                        issue_number: context.issue.number,
-                        owner: context.repo.owner,
-                        repo: context.repo.repo,
-                        body: '❌ **CI Checks Failed**\n\nPlease fix the issues and push your changes:\n\n```bash\n# Fix linting/formatting\nnpm run check:fix\n\n# Ensure build works\nnpm run build\n```\n\n*Check the "Actions" tab for detailed error information.*'
-                      })
