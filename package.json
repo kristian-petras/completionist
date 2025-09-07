@@ -73,5 +73,8 @@
         "*.{json,jsonc}": [
             "biome format --write"
         ]
+    },
+    "dependencies": {
+        "@rbxts/roact": "3.0.1"
     }
 }
