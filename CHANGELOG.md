@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/kristian-petras/completionist/compare/v1.5.0...v1.6.0) (2025-09-07)
+
+
+### Features
+
+* add comprehensive Roact UI system with modern game interface ([840bd33](https://github.com/kristian-petras/completionist/commit/840bd331ef3ae694a4ff6d2f5e63004007a43ce9))
+* add manual dev deployment workflow ([e1886fb](https://github.com/kristian-petras/completionist/commit/e1886fb3d7930ea53f7cc9c6af93afdc4548fe46))
+
 ## [1.5.0](https://github.com/kristian-petras/completionist/compare/v1.4.1...v1.5.0) (2025-09-07)
 
 
