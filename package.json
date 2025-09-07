@@ -69,7 +69,7 @@
     "lint-staged": {
         "src/**/*.{ts,tsx}": [
             "biome check --write",
-            "npm run build",
+            "npm run typecheck",
             "npm run test:ci -- --findRelatedTests --passWithNoTests"
         ],
         "*.{json,jsonc}": [
