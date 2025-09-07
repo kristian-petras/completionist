@@ -1,5 +1,5 @@
 import { makeHello } from "@/shared/module";
-import { createBaseplate } from "./BaseplatGenerator";
+import { createBaseplate } from "./BaseplateGenerator";
 
 print(makeHello("main.server.ts"));
 
