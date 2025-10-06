@@ -58,7 +58,7 @@
         "rojo": "1.0.2",
         "rokit-npm": "^1.0.1",
         "ts-jest": "^29.4.1",
-        "typescript": "^5.9.2"
+        "typescript": "^5.9.3"
     },
     "optionalDependencies": {
         "@biomejs/cli-darwin-arm64": "2.2.3",
